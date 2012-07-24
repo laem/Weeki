@@ -10,9 +10,9 @@ object AnchorSearch {
    *  Return List of anchors with their occurence count
    */
 
-  def search(tid: Int) = {
+  def search(anchorDirectory: String, tid: Int) = {
     
-    Source.fromFile("dispatched/"+tid.toString).getLines.toList.map(
+    Source.fromFile(anchorDirectory+tid.toString).getLines.toList.map(
         _.split("\\t").toList match {
          	case a :: c :: Nil => a -> c.toInt
          	case _ => Nil
