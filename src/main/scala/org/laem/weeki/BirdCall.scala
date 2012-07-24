@@ -12,7 +12,7 @@ object BirdCall {
    * 
    * 
    */
-	val res = AnchorSearch.search(args(0), args(1))
+	val res = AnchorSearch.search(args(0), args(1).toInt)
 	println(res)
     SearchAPIClient.go(res.map(_.productElement(0).toString))
     
