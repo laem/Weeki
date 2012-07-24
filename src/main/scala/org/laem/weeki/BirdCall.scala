@@ -1,6 +1,6 @@
 package org.laem.weeki
 
-object StreamingCall {
+object BirdCall {
 
   def main(args: Array[String]): Unit = {
 
