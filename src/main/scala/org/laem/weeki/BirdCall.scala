@@ -12,6 +12,9 @@ object StreamingCall {
    * 
    * 
    */
-
+	val res = AnchorSearch.search(1234326)
+	println(res)
+    SearchAPIClient.go(res.map(_.productElement(0).toString))
+    
   }
 }

@@ -63,7 +63,6 @@ object SearchAPIClient {
     //Contruct the Twitter Search API GET path from keywords
 
     val path = "/search.json?q=" + URLEncoder.encode(keywords.tail.foldLeft(enclose(keywords.head))((k, i) => k + " OR " + enclose(i)), "UTF-8")
-    println("path: "+path)
 
     
     val request1 = makeRequest(client, path)
@@ -79,10 +78,10 @@ object SearchAPIClient {
     val request = new DefaultHttpRequest(
       HttpVersion.HTTP_1_1, HttpMethod.GET, path)
 
-    println(request)
+    //println(request)
     client(request) onSuccess { response =>
       val responseString = response.getContent.toString(CharsetUtil.UTF_8)
-      println("))) Received result: " + responseString)
+      //println("))) Received result: " + responseString)
       //Parse response for Json objects
       try {
         val tweets = parse[JsonResponse](responseString).results

@@ -12,7 +12,7 @@ object AnchorSearch {
 
   def search(tid: Int) = {
     
-    Source.fromFile(tid.toString).getLines.toList.map(
+    Source.fromFile("dispatched/"+tid.toString).getLines.toList.map(
         _.split("\\t").toList match {
          	case a :: c :: Nil => a -> c.toInt
          	case _ => Nil
